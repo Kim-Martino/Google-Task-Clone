@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
-
 import 'presentation/list/screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Myapp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Myapp extends StatelessWidget {
+  const Myapp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'TASK DEMO',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const ListScreen(),
+      home: ListScreen(),
     );
   }
 }
