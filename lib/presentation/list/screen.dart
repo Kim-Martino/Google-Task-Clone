@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../domain/task.dart';
+import 'task_list.dart';
 
 class ListScreen extends StatefulWidget {
   const ListScreen({super.key});
@@ -10,6 +11,8 @@ class ListScreen extends StatefulWidget {
 }
 
 class _ListScreenState extends State<ListScreen> {
+  List<String> _taskList = ['내 할일 목록'];
+
   List<Task> _tasks = [
     Task(
       title: '[실행] 목표/동기부여',
@@ -36,6 +39,12 @@ class _ListScreenState extends State<ListScreen> {
     ),
   ];
 
+  // 구현할 항목:
+  //  - 새 목록 추가
+  //  - 아이템을 만들면 현재 목록에 넣기
+  //  - 스타 표시된 애들만 따로 리스트에 표시
+  //  - Complete
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,125 +66,34 @@ class _ListScreenState extends State<ListScreen> {
         length: 3,
         child: Column(
           children: [
-            TabBar(tabs: [
-              Icon(Icons.star),
-              Text('내 할 일 목록'),
-              Text('+ 새 목록'),
-            ]),
+            TabBar(
+              tabs: [
+                Icon(Icons.star),
+                ..._taskList.map((e) => Text(e)),
+                Text('+ 새 목록'),
+              ],
+              onTap: (value) {
+                final addNewListIndex = _taskList.length + 1;
+                if (value == addNewListIndex) {
+                  setState(() {
+                    _taskList.add('new list');
+                  });
+                }
+              },
+            ),
             Divider(),
             Expanded(
-              child: TabBarView(children: [
-                ListView.builder(
-                  itemBuilder: (context, index) {
-                    final task = _tasks[index];
-                    return Container(
-                      height: 80,
-                      child: Padding(
-                        padding: EdgeInsets.all(16.0),
-                        child: Row(
-                          children: [
-                            // 1.
-                            GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  _tasks[index] = Task(
-                                    title: task.title,
-                                    content: task.content,
-                                    isComplete: !task.isComplete,
-                                    isFavorite: task.isFavorite,
-                                  );
-                                });
-                              },
-                              child: Container(
-                                width: 30,
-                                height: 30,
-                                decoration: BoxDecoration(
-                                  color: task.isComplete
-                                      ? Colors.blue
-                                      : Colors.white,
-                                  border: Border.all(
-                                    color: Colors.grey,
-                                    width: 2,
-                                  ),
-                                  shape: BoxShape.circle,
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 16),
-                            // 2.
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Flexible(
-                                    child: Text(
-                                      task.title,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  ),
-                                  SizedBox(height: 8),
-                                  Expanded(
-                                    child: Text(
-                                      task.content,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            SizedBox(width: 16),
-                            // 3.
-                            Container(
-                              width: 30,
-                              height: 30,
-                              child: GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    _tasks[index] = Task(
-                                      title: task.title,
-                                      content: task.content,
-                                      isComplete: task.isComplete,
-                                      isFavorite: !task.isFavorite,
-                                    );
-                                  });
-                                },
-                                child: Icon(
-                                  Icons.star,
-                                  color: task.isFavorite
-                                      ? Colors.blue
-                                      : Colors.black,
-                                  size: 30,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    );
-                  },
-                  itemCount: _tasks.length,
-                ),
-                ListView.separated(
-                  itemBuilder: (context, index) => Container(
-                    color: Colors.amber,
-                    height: 10,
+              child: TabBarView(
+                children: [
+                  TaskList(
+                    tasks: _tasks,
                   ),
-                  separatorBuilder: (context, index) => Container(
-                    height: 10,
+                  ..._taskList.map(
+                    (e) => TaskList(tasks: _tasks),
                   ),
-                  itemCount: 10,
-                ),
-                ListView.separated(
-                  itemBuilder: (context, index) => Container(
-                    color: Colors.blue,
-                    height: 10,
-                  ),
-                  separatorBuilder: (context, index) => Container(
-                    height: 10,
-                  ),
-                  itemCount: 10,
-                )
-              ]),
+                  Container(),
+                ],
+              ),
             ),
           ],
         ),
