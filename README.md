@@ -82,3 +82,31 @@ git push -f origin main
 ### 결론
 
 해당 프로젝트는 작업을 main 브랜치에다 할것
+
+
+### 애플리케이션 계층
+
+- repository
+    - `TaskRepository`
+- domain/model/entity
+    - `TaskModel`
+- controller
+    - `TaskProvider`
+- presentation/ui
+    - `TaskCard`
+
+TaskCard -> TaskProvider -> TaskModel
+                         -> TaskRepostiory
+            - get, change, save
+
+TaskCard <- (Observerable pattern)
+ provider reference
+ reference.listen()
+
+TaskProvider
+ - notifierListeners();
+
+
+ ### UI/UX 디자인
+
+ - https://www.figma.com/file/hlEaJTacxmVu78J0MaFjnG/Google-Task-UI-Design?type=design&node-id=0%3A1&mode=design&t=CowAhwQ1bN5NuQCF-1
