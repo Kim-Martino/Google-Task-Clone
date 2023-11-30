@@ -20,6 +20,7 @@ class _TaskListState extends State<TaskList> {
     return ListView.builder(
       itemBuilder: (context, index) {
         final task = widget.tasks[index];
+        // 새로운 코드 작성함.
         return Container(
           height: 80,
           child: Padding(
