@@ -1,1 +1,84 @@
 # google_tasks_clone
+
+## GIT, GITHUB
+- git: 코드 관리 툴
+- github: git서버중 가장 잘 나가는 서버, MS것
+
+깃으로 프로젝트를 관리하는 방법으로 크게 2가지가 있다.
+1. gitflow
+2. githubflow
+
+### gitflow
+
+- main,master: 안정 브랜치
+- develop: 개발 브랜치
+- feature/*: 기능별로 만들어지는 브랜치
+- release/*: 릴리즈별로 만들어지는 브랜치
+- hotfix/*: 핫픽스별로 만들어지는 브랜치
+
+### develop 브랜치를 만드는 법
+git switch main
+git checkout -b develop main
+
+### feature 브랜치를 만드는 법
+git switch develop
+git checkout -b feature/task-read develop
+
+
+### 상태를 확인하기 위한 커맨드들
+git log --oneline
+git status
+git branch
+
+### 스테이징 작업대에 넣는 커맨드
+git add .
+git add {file_path}
+
+### 작업대에서 내리는법
+git reset
+
+### 커밋하는 법
+
+```
+git commit
+# vim 이나 vi 에디터에서 다음 커맨드를 활용
+# i, :wq
+```
+
+### 다른 브랜치를 머지하는 법
+
+git swich develop
+git merge feture/task-read
+git branch -d feature/task-read
+
+### 로컬 작업을 remote로 올리는법
+git push origin -u develop
+git pull origin develop
+
+git push origin -u feature/task-read
+
+# 활성브래친가 develop인 상태에서
+git switch develop
+git checkout -b release/0.1.0
+git switch develop
+git merge release/0.1.0
+git switch main
+git merge release/0.1.0
+
+sourcetree
+- UI, release, main
+
+### ssh
+
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=windows
+
+git remote -vv
+git remote set-url origin {ssh주소}
+
+git fetch --prune
+git commit --amend
+git push -f origin main
+
+### 결론
+
+해당 프로젝트는 작업을 main 브랜치에다 할것
