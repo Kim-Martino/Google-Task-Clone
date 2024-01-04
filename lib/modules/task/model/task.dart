@@ -1,7 +1,7 @@
-class Task {
-  Task({
+class TaskModel {
+  TaskModel({
     required this.title,
-    required this.content,
+    this.content = "",
     this.isFavorite = false,
     this.isComplete = false,
   });

@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
-import 'presentation/list/screen.dart';
+import 'package:provider/provider.dart';
+import 'modules/task/service/task_service.dart';
+import 'modules/task/view/task_list_screen.dart';
 
 void main() {
-  runApp(const Myapp());
+  runApp(
+    MultiProvider(providers: [
+      ChangeNotifierProvider(create: (_) => TaskService()),
+    ], child: const Myapp()),
+  );
 }
 
 class Myapp extends StatelessWidget {
@@ -12,11 +18,12 @@ class Myapp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'TASK DEMO',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: ListScreen(),
+      home: HomeScreen(),
     );
   }
 }
