@@ -73,8 +73,15 @@ class TaskCard extends StatelessWidget {
               ],
             ),
             task.isFavorite
-                ? const Icon(Icons.star, color: primary)
-                : const Icon(Icons.star_border_outlined, color: outline),
+                ? GestureDetector(
+                    onTap: onFavoritePressed,
+                    child: const Icon(Icons.star, color: primary),
+                  )
+                : GestureDetector(
+                    onTap: onFavoritePressed,
+                    child:
+                        const Icon(Icons.star_border_outlined, color: outline),
+                  ),
           ],
         ),
       ),
