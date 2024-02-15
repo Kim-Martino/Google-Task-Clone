@@ -57,15 +57,33 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Row(
+                Row(
                   children: [
                     Icon(
                       Icons.list_alt,
                       color: onPrimary,
                     ),
                     SizedBox(width: 8),
-                    Icon(
-                      Icons.import_export,
+                    PopupMenuButton<Order>(
+                      onSelected: (Order result) {
+                        viewModel.setOrder(result);
+                      },
+                      itemBuilder: (BuildContext context) =>
+                          <PopupMenuEntry<Order>>[
+                        const PopupMenuItem<Order>(
+                          value: Order.none,
+                          child: Text('None'),
+                        ),
+                        const PopupMenuItem<Order>(
+                          value: Order.dateAsc,
+                          child: Text('Date Asc'),
+                        ),
+                        const PopupMenuItem<Order>(
+                          value: Order.dateDesc,
+                          child: Text('Date Desc'),
+                        ),
+                      ],
+                      icon: Icon(Icons.import_export),
                       color: onPrimary,
                     ),
                   ],

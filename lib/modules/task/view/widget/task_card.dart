@@ -68,6 +68,12 @@ class TaskCard extends StatelessWidget {
                         color: onSurface,
                       ),
                     ),
+                    Text(
+                      '${task.date}',
+                      style: paragraphSmall.copyWith(
+                        color: onSurface,
+                      ),
+                    ),
                   ],
                 ),
               ],
