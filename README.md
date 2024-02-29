@@ -12,20 +12,29 @@ Google사의 Tasks 의 클론 코딩 프로젝트입니다.
 
 
 # 학습 내용
-[b] Flutter
+### Flutter
 
+- 애플리케이션의 구조 이해
 - Tasks의 앱의 기초 UI 작성
 - Tasks의 앱의 정렬 기능
 - Tasks의 앱의 Task 생성 및 삭제
 - Task의 즐겨찾기 토글 위젯
 
-[b] Figma
+
+### Figma
 
 - Tasks의 앱의 UI 분석
 - 분석 결과를 토대로 아이콘 제작 및 기초 UI 작성
 
 
+### GitHub
+- GitHub 기초 사용법 (commit, push)
+- branch 이해
+
+
 # 기능 구현
+
+
 
 
 
@@ -110,9 +119,6 @@ git fetch --prune
 git commit --amend
 git push -f origin main
 
-### 결론
-
-해당 프로젝트는 작업을 main 브랜치에다 할것
 
 
 ### 애플리케이션 계층
