@@ -11,11 +11,21 @@ Google사의 Tasks 의 클론 코딩 프로젝트입니다.
 - Figma
 
 
-# 주요 기능
+# 학습 내용
+[b] Flutter
+
 - Tasks의 앱의 기초 UI 작성
 - Tasks의 앱의 정렬 기능
 - Tasks의 앱의 Task 생성 및 삭제
+- Task의 즐겨찾기 토글 위젯
 
+[b] Figma
+
+- Tasks의 앱의 UI 분석
+- 분석 결과를 토대로 아이콘 제작 및 기초 UI 작성
+
+
+# 기능 구현
 
 
 
