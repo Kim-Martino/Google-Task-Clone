@@ -1,5 +1,26 @@
 # google_tasks_clone
 ---
+해당 프로젝트는 애플리케이션 개발의 기초 구조와 Flutter 코딩 연습 및 Figma 디자인을 통한
+Google사의 Tasks 의 클론 코딩 프로젝트입니다.
+
+# 학습 기간
+- 23.11 ~ 24.02
+
+# 개발 환경
+- Flutter
+- Figma
+
+
+# 주요 기능
+- Tasks의 앱의 기초 UI 작성
+- Tasks의 앱의 정렬 기능
+- Tasks의 앱의 Task 생성 및 삭제
+
+
+
+
+# 개인 메모
+---
 ## GIT, GITHUB
 - git: 코드 관리 툴
 - github: git서버중 가장 잘 나가는 서버, MS것
