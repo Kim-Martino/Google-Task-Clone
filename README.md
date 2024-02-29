@@ -34,9 +34,35 @@ Google사의 Tasks 의 클론 코딩 프로젝트입니다.
 
 # 기능 구현
 
+- U.I
+  
+![HomeScreen_img](https://github.com/Kim-Martino/Google-Task-Clone/assets/111330098/ecaf85cd-a467-4d97-9488-0ec0549fe3ca)
+
+- Task의 생성 및 삭제
+
+![녹화_2024_02_29_18_46_40_230](https://github.com/Kim-Martino/Google-Task-Clone/assets/111330098/d72c9c8b-15d2-4592-a1e5-be2673aee80d)
 
 
+- Task의 즐겨찾기 토글 on/off
+![녹화_2024_02_29_18_52_31_880](https://github.com/Kim-Martino/Google-Task-Clone/assets/111330098/30233fbe-f889-4bd3-9cbd-0be9422aef1a)
 
+
+- Task의 날짜 정렬
+
+None 선택시 Task 생성 순 정렬
+![녹화_2024_02_29_18_48_19_566](https://github.com/Kim-Martino/Google-Task-Clone/assets/111330098/4a46dd84-4a7f-43d0-ae4c-2bea57125670)
+
+
+Asc 선택시 오름차 순 정렬
+![asc](https://github.com/Kim-Martino/Google-Task-Clone/assets/111330098/211fe1eb-69c2-40d9-a9ff-1557734d370d)
+
+
+Desc 선택시 내림차 순 정렬
+![desc](https://github.com/Kim-Martino/Google-Task-Clone/assets/111330098/bf2f6d3e-bdd9-4c7c-b452-85b0ccfbd180)
+
+- Figma U.I 디자인
+
+https://www.figma.com/file/hlEaJTacxmVu78J0MaFjnG/Google-Task-UI-Design?type=design&node-id=0%3A1&mode=design&t=CowAhwQ1bN5NuQCF-1
 
 # 개인 메모
 ---
